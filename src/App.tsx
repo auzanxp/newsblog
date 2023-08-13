@@ -1,7 +1,12 @@
-import { DatePicker } from 'antd';
+import HomePage from "./pages/Home"
 
-const App = () => {
-  return <DatePicker />;
-};
 
-export default App;
+const App: React.FC = () => {
+  return (
+    <>
+      <HomePage />
+    </>
+  )
+}
+
+export default App
