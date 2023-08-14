@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { describe, test } from 'vitest';
-import Banner from '../../src/components/banner/Banner';
+import { describe, expect, test } from 'vitest';
+import Banner from '../../src/components/banner/banner';
 
 const mockNews = [
   {

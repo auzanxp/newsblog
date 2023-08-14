@@ -1,5 +1,5 @@
 import helpers from "../../src/helpers";
-import { describe, test } from 'vitest'
+import { describe, expect, test } from 'vitest'
 
 describe("cutString", () => {
   test("should cut string", () => {

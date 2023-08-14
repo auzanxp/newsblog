@@ -1,6 +1,6 @@
 import React from 'react';
 import { render} from '@testing-library/react';
-import { describe, test, vitest } from 'vitest';
+import { describe, expect, test, vitest } from 'vitest';
 import NewsCard from '../../src/components/newsCard/NewsCard';
 
 window.matchMedia = vitest.fn().mockImplementation(query => ({

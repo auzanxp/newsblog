@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
-import { describe, test, vitest } from 'vitest';
+import { describe, expect, test, vitest } from 'vitest';
 import HomePage from '../../src/pages/Home';
 import axios from 'axios';
 

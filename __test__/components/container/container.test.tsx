@@ -1,8 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 import { Container } from "../../../src/components/container";
-import { describe, test } from "vitest";
-
 
 describe('Container', () => {
   test('should render successfully', () => {
