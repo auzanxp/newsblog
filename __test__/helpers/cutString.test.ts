@@ -1,11 +1,12 @@
-import helpers from "ui/helpers";
+import helpers from "../../src/helpers";
+import { describe, test } from 'vitest'
 
 describe("cutString", () => {
-  it("should cut string", () => {
+  test("should cut string", () => {
     expect(helpers.cutString("hello", 3)).toBe("hel....");
   });
 
-  it("should not cut string", () => {
+  test("should not cut string", () => {
     expect(helpers.cutString("hello")).toBe("hello");
   })
 });

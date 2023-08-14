@@ -1,12 +1,7 @@
 import HomePage from "./pages/Home"
 
 
-const App: React.FC = () => {
-  return (
-    <>
-      <HomePage />
-    </>
-  )
-}
+const App: React.FC = () => <HomePage />
+
 
 export default App

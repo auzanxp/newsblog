@@ -1,44 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Global } from '@emotion/react';
 
-import { Global, css } from '@emotion/react';
-import Banner from '../components/Banner';
-import NewsGrid from '../components/NewGrid';
+import NewsCard from '../components/newsCard/NewsCard';
+import { globalStyles } from '../style';
+import { News } from 'news';
+import Banner from '../components/banner/banner';
 
 
-const globalStyles = css`
-  body {
-    background-color: #111;
-    color: #fff;
-  }
-`;
-
-const SECRET_KEY = import.meta.env.VITE_APP_SECRET_KEY;
 const HomePage: React.FC = () => {
-  const [newsList, setNewsList] = useState([]);
+  const [newsList, setNewsList] = useState<News[]>([]);
+
+  const fetchNewsData = async () => {
+    const SECRET_KEY = import.meta.env.VITE_APP_SECRET_KEY;
+
+    try {
+      const response = await axios.get('https://newsapi.org/v2/top-headlines', {
+        params: {
+          apiKey: SECRET_KEY,
+          country: 'us',
+        },
+      });
+      setNewsList(response.data.articles);
+    } catch (error) {
+      console.error('Error fetching news data:', error);
+    }
+  };
 
   useEffect(() => {
-    axios.get('https://newsapi.org/v2/top-headlines', {
-      params: {
-        apiKey: SECRET_KEY,
-        country: 'us',
-      },
-    })
-      .then(response => {
-        setNewsList(response.data.articles);
-      })
-      .catch(error => {
-        console.error('Error fetching news data:', error);
-      });
+    fetchNewsData();
   }, []);
-
-  console.log(newsList)
 
   return (
     <div>
       <Global styles={globalStyles} />
       <Banner data={newsList} />
-      <NewsGrid newsList={newsList} />
+      <NewsCard newsList={newsList} />
     </div>
   );
 };
