@@ -16,7 +16,7 @@
 1. clone this repo
 2. cd to repo
 4. Rename the .env.example file to .env
-5. Replace the YOUR_API_KEY placeholder in the .env file with your actual API key from OpenWeatherMap.
+5. Replace the YOUR_API_KEY placeholder in the .env file with your actual API key.
 6. npm run dev to development project
 7. npm install
 ```
@@ -54,5 +54,6 @@ For merge request description please use merge request template and fill the sec
 
 ## Styling
 
--[`AntDesign`](https://ant.design/) -[`Emotion`](https://emotion.sh/docs/introduction)
+_[`AntDesign`](https://ant.design/)
+_[`Emotion`](https://emotion.sh/docs/introduction)
 For styling please use antDesign and create a file to store css and use BEM http://getbem.com/introduction/ style for name convention.
